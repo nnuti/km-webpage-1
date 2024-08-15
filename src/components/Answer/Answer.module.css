@@ -1,0 +1,405 @@
+/* .answerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8.1285px;
+    gap: 5.42px;
+    background: #ffffff;
+    box-shadow:
+      0px 1px 2px rgba(0, 0, 0, 0.14),
+      0px 0px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 5.419px;
+  } */
+  
+  .answerText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #323130;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 11px;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 800px;
+    overflow-x: auto;
+  }
+  
+  .answerHeader {
+    position: relative;
+  }
+  
+  .answerFooter {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+  
+  .answerDisclaimerContainer {
+    justify-content: center;
+    display: flex;
+  }
+  
+  .answerDisclaimer {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #707070;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+  
+  .citationWrapper {
+    margin-top: 8;
+    display: flex;
+    flex-flow: wrap column;
+    max-height: 150px;
+    gap: 4px;
+  }
+  
+  .citationContainer {
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+  
+    color: #115ea3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 6px;
+    gap: 4px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+  }
+  
+  .citationContainer:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .citation {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    flex: none;
+    flex-grow: 0;
+    z-index: 2;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: #424242;
+    cursor: pointer;
+  }
+  
+  .citation:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .accordionIcon {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin-top: 4px;
+    color: #616161;
+    font-size: 10px;
+  }
+  
+  .accordionIcon:hover {
+    cursor: pointer;
+  }
+  
+  .accordionTitle {
+    margin-right: 5px;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #616161;
+  }
+  
+  .accordionTitle:hover {
+    cursor: pointer;
+  }
+  
+  .clickableSup {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    z-index: 2;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: #424242;
+    cursor: pointer;
+  }
+  
+  .clickableSup:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  sup {
+    font-size: 10px;
+    line-height: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    .answerFooter {
+      flex-direction: column-reverse;
+    }
+  
+    .citationWrapper {
+      max-height: max-content;
+    }
+  
+    .citationContainer {
+      margin-left: 0;
+    }
+  
+    .answerDisclaimer {
+      margin-bottom: 5px;
+    }
+  }
+  
+
+.answerContainer {
+    padding-left: 28px;
+    /* background: rgb(249, 249, 249); */
+    /* border-radius: 8px; */
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12); */
+    outline: transparent solid 1px;
+    width: 100%;
+}
+
+.answerLogo {
+    font-size: 28px;
+}
+
+.answerText {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    /* padding-top: 16px; */
+    padding-bottom: 16px;
+    white-space: normal;
+    /* display: inline; */
+    /* ใส่ loading ข้างหลังได้ไหม */
+    content: "ดำเนินการคำตอบ..."; 
+    animation: loading 1s infinite;
+    font-family: "IBM Plex Sans Thai";
+    text-align: left;
+
+}
+
+.answerText table {
+    border-collapse: collapse;
+}
+
+.answerText td,
+.answerText th {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.selected {
+    outline: 2px solid rgba(115, 118, 225, 1);
+}
+
+.citationLearnMore {
+    margin-right: 5px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.citation {
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0px 8px;
+    background: #d1dbfa;
+    color: #123bb6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.citation:hover {
+    text-decoration: underline;
+}
+
+.followupQuestionsList {
+    margin-top: 10px;
+}
+
+.followupQuestionLearnMore {
+    margin-right: 5px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.followupQuestion {
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 0px 8px;
+    background: #e8ebfa;
+    color: black;
+    font-style: italic;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.supContainer {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.supContainer:hover {
+    text-decoration: underline;
+}
+
+sup {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    vertical-align: top;
+    top: -1;
+    margin: 0px 2px;
+    min-width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: #d1dbfa;
+    color: #123bb6;
+    text-decoration-color: transparent;
+    outline: transparent solid 1px;
+    cursor: pointer;
+}
+
+.retryButton {
+    width: fit-content;
+}
+
+@keyframes loading {
+    0% {
+        content: "";
+    }
+    25% {
+        content: ".";
+    }
+    50% {
+        content: "..";
+    }
+    75% {
+        content: "...";
+    }
+    100% {
+        content: "";
+    }
+}
+
+.loadingdots::after {
+    content: "";
+    animation: loading 1s infinite;
+}
+
+
+
+
+
+
+
+
+
+.typing {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* ทำให้อยู่จุดเดียว */
+  .typing span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 0;
+    animation: typing .5s infinite;
+  }
+
+  .typing span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .typing span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .typing span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes typing {
+    0%, 80%, 100% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+
+  .htmlContainer{
+    text-align: left;
+  }
+
+  .customAccordion {
+    width: 100%;
+    border-radius: 8px;
+   
+
+  }

@@ -1,0 +1,165 @@
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    /* padding: 60px !important; */
+}
+
+.chatRoot {
+    flex: 1;
+    display: flex;
+}
+
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    /* margin-top: 50px; */
+}
+
+.chatEmptyState {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 1024px;
+    padding-top: 60px;
+}
+
+.chatEmptyStateTitle {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #191267;
+}
+
+/* mobile chatEmptyStateTitle */
+@media only screen and (max-width: 600px) {
+    .chatEmptyStateTitle {
+        font-size: 2rem;
+    }
+    .chatEmptyStateSubtitle {
+        font-size: 1rem;
+    }
+}
+
+.chatEmptyStateSubtitle {
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #71767a;
+    margin-top: 0px;
+}
+
+@media only screen and (max-height: 780px) {
+    .chatEmptyState {
+        padding-top: 0;
+    }
+
+    .chatEmptyStateTitle {
+        font-size: 3rem;
+        margin-bottom: 0px;
+    }
+}
+
+.chatMessageStream {
+    flex-grow: 1;
+    max-height: 1024px;
+    max-width: 1028px;
+    width: 100%;
+    overflow-y: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatMessageGpt {
+    margin-bottom: 20px;
+    max-width: 100%;
+    display: flex;
+    min-width: 500px;
+}
+
+.chatMessageGptMinWidth {
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.chatInput {
+    position: sticky;
+    bottom: 0;
+    /* flex: 0 0 10px; */
+    padding-top: 12px;
+    padding-bottom: 0px;
+    /* padding-left: 40px !important;
+    padding-right: 40px !important; */
+    width: 100%;
+    max-width: 1028px;
+    /* background: #f2f2f2; */
+}
+
+.chatAnalysisPanel {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 89vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.chatSettingsSeparator {
+    margin-top: 15px;
+}
+
+.loadingLogo {
+    font-size: 28px;
+}
+
+.commandsContainer {
+    display: flex;
+    align-self: flex-end;
+}
+
+.commandButton {
+    /* margin-right: 20px; */
+    margin-bottom: 10px;
+}
+
+.iconDot {
+    border: 3px solid #aecc50;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: red;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    height: 35px;
+    width: 48px;
+}
+
+.dotLeft {
+    color: #49a8e0;
+    margin-right: -3px;
+    text-align: center;
+    margin-top: 2px;
+}
+.dotRight {
+    color: #49a8e0;
+    margin-left: -3px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* mobile chatContainer */
+@media only screen and (max-width: 600px) {
+    .chatContainer {
+        margin-top: 20px;
+    }
+}

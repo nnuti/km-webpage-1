@@ -1,0 +1,14 @@
+.toggleSidebar {
+    /* background-color ไล่ระดับสีหน่อย */
+    /* background: linear-gradient(to right, #2b82c5, #4797cb) !important; */
+    /* background-color: #2d2d2c !important; */
+    border-radius: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    padding: 0px 10px 0px 5px !important;
+    margin-right: -10px !important;
+    margin-top: -40px !important;
+}
+
+.bgSidebar {
+    background: #191919 !important;
+}

@@ -1,0 +1,75 @@
+.questionInputContainer {
+    border-radius: 16px;
+    /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12); */
+    /* height: 80px; */
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background: rgba(255, 255, 255, 1);
+}
+
+.questionInputTextArea {
+    width: 100%;
+    border-radius: 8px;
+    /* line-height: 10px; */
+}
+
+.questionInputButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.questionInputSendButton {
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.questionInputSendButtonDisabled {
+    opacity: 0.4;
+}
+
+
+.playbutton {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: relative;
+    /* ทำให้มี effect หมุนรอบๆได้ไหม */
+     animation: spin 1s linear infinite; 
+  }
+  /* @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .playbutton {
+    animation: spin 2s linear infinite;
+  }
+  .playbutton:before {
+    animation: none;
+  } */
+  .playbutton:before {
+    /* content: "";
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    border-style: solid;
+    border-width: 15px 0 15px 30px;
+    border-color: transparent transparent transparent white; */
+   
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 7px;
+    border-color:   white;
+    
+  }
+

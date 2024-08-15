@@ -1,0 +1,1 @@
+export const APP_FE_CLIENTID = process.env.APP_FE_CLIENTID;

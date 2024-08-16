@@ -158,7 +158,7 @@ export const historyGenerate = async (
   });
 
   
-  const response = await fetch(`${process.env.URL_BACKEND}/api/chatai`, {
+  const response = await fetch(`${process.env.URL_BACKEND}/stream_chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -20,6 +20,8 @@ import { useAppDispatch, useAppSelector } from "../../redux-toolkit/hooks";
 import { selectHistoryState } from "../../redux-toolkit/History/history-slice";
 import LoadingSpinner from "../../components/Spinner/LoadingSpinner";
 import SnackbarSuccessComponent from "../../components/Snackbars/SnackbarSuccessComponent";
+import { Assistant } from "@mui/icons-material";
+import { formatDuration } from "../../utills";
 
 const enum messageStatus {
     NotRunning = 'Not Running',
@@ -168,7 +170,7 @@ const Chat: React.FC = () => {
             }
 
 
-            var dataResp: ChatMessage[] = []
+            var dataResp: any = []
             var errorResponseMessage = 'Please try again. If the problem persists, please contact the site administrator.'
 
             const response = params.get('id')
@@ -288,6 +290,104 @@ const Chat: React.FC = () => {
 
                 
             // }
+
+            if (response?.body) {
+                const reader = response.body.getReader()
+ 
+                let runningText = ''
+                let emptystring = ''
+                while (true) {
+                    setProcessMessages(messageStatus.Processing)
+                    const { done, value } = await reader.read()
+                    if (done) break
+ 
+                    var text = new TextDecoder('utf-8').decode(value)
+                    const objects = text.split('\n')
+                    // console.log(objects)
+                    objects.forEach(obj => {
+                        try {
+                            // console.log(obj)
+                            if (obj !== '' && obj !== '{}') {
+                                // runningText += obj.split('{"results": [{,"generated_text": "')
+                                // runningText += obj.split('"generated_text": "')[1].split('"}]}')[0]
+
+                                runningText = obj.split('data: ')[1]//.replace("results", "choices").replace("generated_text","messages")
+                                //console.log(runningText)
+                                // result = JSON.parse('{"response":"'+runningText+'"}')
+                                result = JSON.parse(runningText)
+                                // console.log(result.results[0].generated_text)
+                                emptystring += result.results[0].generated_text
+                                console.log(emptystring)
+                
+                                // if (result.choices?.length > 0) {
+                                //     result.choices[0].messages.forEach(msg => {
+                                //         msg.id = result.id
+                                //         msg.date = new Date().toISOString()
+                                //     })
+                                //     if (result.choices[0].messages?.some(m => m.role === ASSISTANT)) {
+                                //         // setShowLoadingMessage(false)
+                                //     }
+                                //     result.choices[0].messages.forEach(resultObj => {
+                                //         dataResp.push(resultObj)
+                                //         // processResultMessage(resultObj, userMessage, params.get('id') ?? undefined)
+                                //     })
+                                // } else if (result.error) {
+                                //     throw Error(result.error)
+                                // }
+ 
+                                // if (result?.history_metadata) {
+                                //     resultConversation = {
+                                //         id: result.history_metadata.conversation_id,
+                                //         title: result.history_metadata.title,
+                                //         date: result.history_metadata.date
+                                //         // Assuming 'content' is a required property of IData, you need to provide a value for it.
+                                //         // If 'content' is not applicable in this context, you might need to reconsider your data structure or make 'content' optional in IData.
+                                //         // content: "Some content or an appropriate value here"
+                                //     };
+ 
+ 
+                                // }
+ 
+                                runningText = ''
+                            }
+                        } catch (e) {
+                            if (!(e instanceof SyntaxError)) {
+                                console.error(e)
+                                throw e
+                            } else {
+                                console.log('Incomplete message. Continuing...')
+                            }
+                        }
+                    })
+                }
+ 
+                dataResp.push(emptystring)
+                console.log('DataResp:', dataResp);
+ 
+ 
+                setMessages([...messages, userMessage, ...dataResp.map((msg) => {
+                    if (msg) {
+                        return {
+                            id: uuid(),
+                            role: 'assistant',
+                            content: msg,
+                            date: new Date(),
+                            created_at: formatDuration(new Date().toISOString()),
+                        };
+                    } else if (msg.role === 'tool') {
+                        return {
+                            id: uuid(), // Generate a new UUID for the id
+                            role: msg.role,
+                            content: msg.content,
+                            date: msg.date
+                        };
+                    }
+                    return undefined; // This line explicitly returns undefined for non-matching cases
+                }).filter(msg => msg !== undefined) as ChatMessage[]]); // Filter out undefined and assert the correct type
+ 
+ 
+            }
+
             const resp = await response.json()
 
             console.log(resp);

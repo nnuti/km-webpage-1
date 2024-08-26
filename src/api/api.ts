@@ -153,7 +153,7 @@ export const historyGenerate = async (
   // }
 
   body =  JSON.stringify({
-    question: options.messages[0].content,
+    input: options.messages[0].content,
 
   });
 

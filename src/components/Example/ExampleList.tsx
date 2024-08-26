@@ -19,16 +19,16 @@ const EXAMPLES: ExampleModel[] = [
     },
     { text: "What happens in a performance review?", value: "What happens in a performance review?" },
     { text: "What does a Product Manager do?", value: "What does a Product Manager do?" }*/
-    { text: "Calendar of yearly holidays", value: "Calendar of yearly holidays",icon:"GrDocumentCloud",textFooter:"HR Center",
+    { text: "เข้าระบบประกันสังคม ต้องทำยังไง", value: "เข้าระบบประกันสังคม ต้องทำยังไง",icon:"GrDocumentCloud",textFooter:"HR Center",
   color:"#2683D0"
 },
-    { text: "Financial statement of 3rd quarter in year 2024", value: "Financial statement of 3rd quarter in year 2024",icon:"",textFooter:"Finance & Tax" }
+    { text: "Annual Leave Policy", value: "Annual Leave Policy",icon:"",textFooter:"Finance & Tax" }
     
 ];
 
 const EXAMPLES_SUG: ExampleModel[] = [
-    { text: "Award events in year 2024", value: "Award events in year 2024",icon:"",textFooter:"Event and exhibition" },
-    { text: "Annual report of year 2023 (แบบ 56-1 One Report)", value: "Annual report of year 2023 (แบบ 56-1 One Report)",icon:"",textFooter:"Annual Reports" }
+    { text: "กรณีแต่งงานได้เงินสบทบเท่าไหร่", value: "กรณีแต่งงานได้เงินสบทบเท่าไหร่",icon:"",textFooter:"Event and exhibition" },
+    { text: "วันลาทั้งหมดของ 1 ปี", value: "วันลาทั้งหมดของ 1 ปี",icon:"",textFooter:"Annual Reports" }
     
 ];
 
